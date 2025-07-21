@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import secretImg from "./assets/secret.jpg";
+import { motion } from "framer-motion"; // ✨ Added for animation
 
 function App() {
   const [input, setInput] = useState("");
@@ -54,11 +55,25 @@ function App() {
           )}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center gap-4 animate-fade-in">
+        <div className="flex flex-col items-center justify-center gap-4 animate-fade-in relative w-full">
+          {/* 💖 Animated text appear + float to top */}
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 1 }}
+            animate={{
+              opacity: 1,
+              y: -180,
+              scale: 0.6,
+            }}
+            transition={{ duration: 1.5, delay: 0.5, type: "spring" }}
+            className="absolute text-pink-600 text-4xl font-bold z-10 text-center"
+          >
+            I Love Youuu Mere Mote 💋😘
+          </motion.div>
+
           <img
             src={secretImg}
             alt="Secret"
-            className="rounded-xl shadow-2xl w-[90vw] max-w-md border-4 border-pink-200"
+            className="rounded-xl shadow-2xl w-[90vw] max-w-md border-4 border-pink-200 mt-20"
           />
           <p className="text-pink-700 text-xl font-semibold mt-4">
             Welcome! ❤️
