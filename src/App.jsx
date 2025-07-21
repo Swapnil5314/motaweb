@@ -76,7 +76,7 @@ function App() {
             className="rounded-xl shadow-2xl w-[90vw] max-w-md border-4 border-pink-200 mt-20"
           />
           <p className="text-pink-700 text-xl font-semibold mt-4">
-            Welcome! ❤️
+            Welcome Meriii cutiee! ❤️
           </p>
         </div>
       )}
